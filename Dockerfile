@@ -1,14 +1,10 @@
 FROM centos:centos7.8.2003
 MAINTAINER by lxc (fxl0206@gmail.com)
 
-ADD sshfile/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
-ADD sshfile/ssh_host_rsa_key.pub /etc/ssh/ssh_host_rsa_key.pub
-ADD sshfile/ssh_host_ed25519_key /etc/ssh/ssh_host_ed25519_key
-ADD sshfile/ssh_host_ecdsa_key /etc/ssh/ssh_host_ecdsa_key
-ADD sshfile/authorized_keys /root/.ssh/authorized_keys
-
+COPY sshfile/* /etc/ssh/
 
 RUN mkdir -p /root/.ssh && \
+    mv /etc/ssh/authorized_keys /root/.ssh/authorized_keys && \
     chmod 600 /etc/ssh/ssh_host_rsa_key && \
     chmod 600 /etc/ssh/ssh_host_ed25519_key && \
     chmod 600 /etc/ssh/ssh_host_ecdsa_key && \
