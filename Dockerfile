@@ -1,5 +1,5 @@
 FROM centos:centos7.8.2003
-MAINTAINER by cfxl (fxl0206@gmail.com)
+MAINTAINER by fxl (fxl0206@gmail.com)
 
 COPY sshfile/* /etc/ssh/
 
