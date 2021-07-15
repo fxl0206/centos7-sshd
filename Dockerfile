@@ -1,4 +1,4 @@
-FROM centos:centos7.8.2003
+FROM centos:8
 MAINTAINER by fxl (fxl0206@gmail.com)
 
 COPY sshfile/* /etc/ssh/
